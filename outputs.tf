@@ -1,3 +1,7 @@
+output "graph_services_accounts_id" {
+  description = "Map of id values across all graph_services_accounts, keyed the same as var.graph_services_accounts"
+  value       = { for k, v in azurerm_graph_services_account.graph_services_accounts : k => v.id }
+}
 output "graph_services_accounts_application_id" {
   description = "Map of application_id values across all graph_services_accounts, keyed the same as var.graph_services_accounts"
   value       = { for k, v in azurerm_graph_services_account.graph_services_accounts : k => v.application_id }
